@@ -1,13 +1,11 @@
 :root {
-  --bg: #fff4e2;
-  --ink: #3a2110;
-  --ink-soft: rgba(58, 33, 16, 0.66);
-  --ink-faint: rgba(58, 33, 16, 0.42);
-  --accent: #e8641c;
-  --accent-warm: #f6a821;
-  --magenta: #c2185b;
-  --card: #fffdf7;
-  --line: rgba(58, 33, 16, 0.1);
+  --ink: #ffffff;
+  --ink-soft: rgba(255, 255, 255, 0.82);
+  --ink-faint: rgba(255, 255, 255, 0.55);
+  --accent: #f6c177;
+  --card-bg: rgba(12, 12, 16, 0.42);
+  --card-bg-hover: rgba(12, 12, 16, 0.62);
+  --line: rgba(255, 255, 255, 0.18);
 }
 
 * {
@@ -15,27 +13,32 @@
 }
 
 ::selection {
-  background: rgba(232, 100, 28, 0.28);
+  background: rgba(246, 193, 119, 0.4);
 }
 
 body {
   margin: 0;
   font-family: "Inter", system-ui, sans-serif;
-  background-color: var(--bg);
-  background-image:
-    radial-gradient(60% 50% at 12% 0%, rgba(246, 168, 33, 0.3), transparent 70%),
-    radial-gradient(50% 40% at 92% 12%, rgba(194, 24, 91, 0.1), transparent 70%),
-    radial-gradient(70% 60% at 88% 100%, rgba(232, 100, 28, 0.22), transparent 70%),
-    linear-gradient(180deg, #fff6e7 0%, #ffeedd 55%, #ffe7d0 100%);
   color: var(--ink);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
+  background: url("https://barbaracocinamexicana.lynkia.app/assets/barbara-f0df51fe.jpg") center / cover no-repeat fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.55) 45%, rgba(0, 0, 0, 0.82) 100%);
+  z-index: 0;
 }
 
 .page {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 420px;
   display: flex;
@@ -45,46 +48,31 @@ body {
 
 .card {
   width: 100%;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 28px;
   padding: 40px 28px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 1px 2px rgba(58, 33, 16, 0.05), 0 16px 40px rgba(232, 100, 28, 0.14);
 }
 
 .card::before {
   content: "";
-  width: 72px;
-  height: 6px;
+  width: 64px;
+  height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent-warm), var(--accent) 50%, var(--magenta));
-  margin-bottom: 22px;
-}
-
-.avatar {
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-warm) 0%, var(--accent) 55%, var(--magenta) 100%);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  box-shadow: 0 6px 18px rgba(232, 100, 28, 0.35);
+  background: rgba(255, 255, 255, 0.55);
+  margin-bottom: 26px;
 }
 
 .name {
-  margin: 18px 0 2px;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+  font-family: "Great Vibes", "Inter", cursive;
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
 }
 
 .niche {
@@ -92,8 +80,9 @@ body {
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--magenta);
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .bio {
@@ -101,6 +90,7 @@ body {
   font-size: 15px;
   line-height: 1.55;
   color: var(--ink-soft);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .links {
@@ -115,22 +105,24 @@ body {
   display: block;
   width: 100%;
   padding: 15px 20px;
-  border-radius: 16px;
-  background: #fff6e8;
+  border-radius: 18px;
+  background: var(--card-bg);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--line);
   color: var(--ink);
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 
 .link:hover {
-  transform: translateY(-1px);
-  border-color: var(--magenta);
-  color: var(--magenta);
-  background: #fff;
-  box-shadow: 0 6px 16px rgba(194, 24, 91, 0.12);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: var(--card-bg-hover);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
 .links--social {
@@ -162,8 +154,9 @@ body {
   color: var(--ink-faint);
   text-decoration: none;
   letter-spacing: 0.02em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .footer a:hover {
-  color: var(--magenta);
+  color: #fff;
 }
