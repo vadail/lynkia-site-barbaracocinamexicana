@@ -1,239 +1,500 @@
-:root {
-  --ink: #ffffff;
-  --ink-soft: rgba(255, 255, 255, 0.82);
-  --ink-faint: rgba(255, 255, 255, 0.55);
-  --accent: #f6c177;
-  --card-bg: rgba(12, 12, 16, 0.42);
-  --card-bg-hover: rgba(12, 12, 16, 0.62);
-  --line: rgba(255, 255, 255, 0.18);
-}
-
 * {
   box-sizing: border-box;
 }
 
-::selection {
-  background: rgba(246, 193, 119, 0.4);
-}
-
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
-  color: var(--ink);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: url("https://barbaracocinamexicana.lynkia.app/assets/barbara-f0df51fe.jpg") center / cover no-repeat fixed;
+  font-family: "Montserrat", system-ui, sans-serif;
+  color: #50160E;
+  background: #FBF4EC;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.55) 45%, rgba(0, 0, 0, 0.82) 100%);
-  z-index: 0;
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid #1D749E;
+  outline-offset: 3px;
 }
 
 .page {
-  position: relative;
-  z-index: 1;
   width: 100%;
-  max-width: 420px;
-  display: flex;
-  flex-direction: column;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
   align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
-.card {
-  width: 100%;
-  padding: 40px 28px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-
-.name {
-  margin: 0 0 6px;
-  font-family: "Great Vibes", "Inter", cursive;
-  font-size: 64px;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.1;
-  color: #fff;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
-}
-
-.niche {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--accent);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-}
-
-.bio {
-  margin: 20px 0 0;
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--ink-soft);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-}
-
-.links {
-  width: 100%;
-  margin-top: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.link {
-  display: block;
-  width: 100%;
-  padding: 15px 20px;
-  border-radius: 18px;
-  background: var(--card-bg);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--line);
-  color: var(--ink);
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
-}
-
-.link:hover {
+.btn:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.4);
-  background: var(--card-bg-hover);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
-.links--social {
-  flex-direction: row;
-  margin-top: 22px;
+.btn svg {
+  flex: none;
 }
 
-.links--social .link {
+.btn--rosa {
+  min-height: 54px;
+  padding: 0 34px;
+  background: #DE2360;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 12px 28px rgba(222, 35, 96, 0.28);
+}
+
+.btn--rosa:hover {
+  background: #C41B50;
+}
+
+.btn--line {
+  min-height: 54px;
+  padding: 0 28px;
+  border: 2px solid #50160E;
+  color: #50160E;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.btn--line:hover {
+  background: #50160E;
+  color: #FBF4EC;
+}
+
+.btn--white {
+  min-height: 52px;
+  padding: 0 26px;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.btn--white:hover {
+  background: #FFFFFF;
+  color: #DE2360;
+}
+
+/* HERO: foto de fondo, estilo luminoso */
+.hero {
+  position: relative;
+  min-height: 940px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #FBF4EC;
+}
+
+.hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30% 12%;
+}
+
+.hero__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(251, 244, 236, 0) 0%, rgba(251, 244, 236, 0) 34%, rgba(251, 244, 236, 0.8) 54%, rgba(251, 244, 236, 0.93) 100%);
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 28px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+}
+
+.brand__logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(80, 22, 14, 0.18);
+}
+
+.brand__name {
+  font-family: "Courgette", cursive;
+  font-size: 30px;
+  color: #FFFFFF;
+  text-shadow: 0 1px 12px rgba(23, 20, 18, 0.35);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 6px 24px rgba(80, 22, 14, 0.08);
+}
+
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  color: #50160E;
+}
+
+.nav__link:hover {
+  color: #DE2360;
+}
+
+.nav__link--text {
+  padding: 0 18px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.nav__link--icon {
+  width: 44px;
+}
+
+.hero__body {
+  position: relative;
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 13px 16px;
-}
-
-.links--social .link svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
-
-.courses {
   width: 100%;
-  margin-top: 8px;
-  padding: 26px 22px;
-  border-radius: 22px;
-  background: var(--card-bg);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(246, 193, 119, 0.45);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 30px rgba(246, 193, 119, 0.12);
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px 40px 96px;
+}
+
+.hero__copy {
+  margin-left: auto;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
+  gap: 18px;
+}
+
+.eyebrow {
+  display: flex;
   align-items: center;
-  text-align: center;
+  gap: 14px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: #1D749E;
+}
+
+.eyebrow span {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1D749E;
+}
+
+.hero__title {
+  margin: 0;
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-size: clamp(84px, 10vw, 148px);
+  line-height: 0.95;
+  color: #DE2360;
+}
+
+.hero__tagline {
+  margin: 0;
+  font-family: "Courgette", cursive;
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+.hero__text {
+  margin: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.65;
+  color: #5C3A30;
+  text-wrap: pretty;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* Franja de color de la paleta */
+.stripe {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  height: 8px;
+}
+
+.stripe div:nth-child(1) { background: #DE2360; }
+.stripe div:nth-child(2) { background: #FCCE41; }
+.stripe div:nth-child(3) { background: #1D749E; }
+.stripe div:nth-child(4) { background: #64972C; }
+.stripe div:nth-child(5) { background: #C5602D; }
+
+/* CURSOS: lista editorial */
+.courses {
+  padding: 112px 40px 120px;
+  background: #FBF4EC;
+}
+
+.courses__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.courses__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px 40px;
 }
 
 .courses__title {
   margin: 0;
-  font-family: "Great Vibes", "Inter", cursive;
-  font-size: 34px;
+  font-family: "Courgette", cursive;
   font-weight: 400;
-  line-height: 1.1;
-  color: #fff;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+  font-size: clamp(52px, 6vw, 80px);
+  line-height: 1;
+  color: #DE2360;
 }
 
 .courses__subtitle {
-  margin: 6px 0 0;
-  font-size: 12px;
+  margin: 0 0 10px;
   font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--accent);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  color: #1D749E;
 }
 
-.courses [data-lynkia-catalog] {
-  width: 100%;
-  margin-top: 18px;
+.rows {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(80, 22, 14, 0.18);
+  counter-reset: curso;
 }
 
-.lynkia-content-item {
-  background: rgba(12, 12, 16, 0.42);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 36px;
+  padding: 32px 24px;
+  border-bottom: 1px solid rgba(80, 22, 14, 0.18);
+  color: inherit;
+  transition: background-color 0.25s ease;
 }
 
-.lynkia-content-item:hover {
-  transform: translateY(-2px);
-  border-color: rgba(246, 193, 119, 0.6);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 24px rgba(246, 193, 119, 0.15);
+.row:hover {
+  background: #FFFFFF;
 }
 
-.lynkia-content-link {
-  color: var(--ink);
-  text-decoration: none;
+/* El numero lo pone el contador de CSS: si un curso se oculta o se borra
+   en Lynkia y desaparece de la lista, los demas se vuelven a numerar solos. */
+.row::before {
+  counter-increment: curso;
+  content: counter(curso, decimal-leading-zero);
+  flex: none;
+  width: 64px;
+  font-family: "Courgette", cursive;
+  font-size: 44px;
+  color: #C5602D;
 }
 
-.lynkia-content-cover {
-  border-radius: 0;
+.row__icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background: #F7F3EE;
+  border: 1px solid rgba(80, 22, 14, 0.1);
 }
 
-.lynkia-content-title {
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--ink);
+.row__icon img {
+  width: 118px;
+  height: auto;
 }
 
-.lynkia-content-price {
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 13px;
+.row__body {
+  flex: 1 1 320px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row__title {
+  font-family: "Courgette", cursive;
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+.row__desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #5C3A30;
+}
+
+.row__cta {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 700;
-  color: var(--accent);
+  font-size: 15px;
+  color: #DE2360;
 }
 
-.lynkia-content-empty {
-  color: var(--ink-faint);
+.row__cta svg {
+  transition: transform 0.25s ease;
+}
+
+.row:hover .row__cta svg {
+  transform: translateX(6px);
+}
+
+.rows__empty {
+  margin: 0;
+  padding: 32px 24px;
+  border-bottom: 1px solid rgba(80, 22, 14, 0.18);
+  font-size: 16px;
+  color: #5C3A30;
+}
+
+/* CIERRE: rosa mexicano, como el reverso de la tarjeta */
+.closing {
+  background: #DE2360;
+  color: #FFFFFF;
+  /* margen inferior extra: la insignia de Lynkia queda fija abajo del todo */
+  padding: 96px 40px 84px;
+}
+
+.closing__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.closing__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.closing__info {
+  flex: 1 1 420px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.closing__name {
+  font-family: "Courgette", cursive;
+  font-size: clamp(72px, 8vw, 112px);
+  line-height: 0.95;
+}
+
+.closing__niche {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.closing__rule {
+  width: 56px;
+  height: 3px;
+  background: #FFFFFF;
+  margin: 14px 0 10px;
+}
+
+.closing__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.closing__handle {
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 6px;
+}
+
+.closing__seal {
+  flex: none;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  box-shadow: 0 24px 60px rgba(80, 22, 14, 0.3);
+}
+
+.closing__bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  font-weight: 500;
   font-size: 14px;
 }
 
-.footer {
-  margin-top: 24px;
-}
+@media (max-width: 860px) {
+  .hero__veil {
+    background: linear-gradient(180deg, rgba(251, 244, 236, 0.55) 0%, rgba(251, 244, 236, 0) 14%, rgba(251, 244, 236, 0) 34%, rgba(251, 244, 236, 0.92) 56%, #FBF4EC 72%);
+  }
 
-.footer a {
-  font-size: 12px;
-  color: var(--ink-faint);
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
-}
+  .hero__img {
+    object-position: 22% 0;
+  }
 
-.footer a:hover {
-  color: #fff;
+  .hero__body {
+    align-items: flex-end;
+  }
+
+  .hero__copy {
+    margin-left: 0;
+  }
+
+  .nav {
+    display: none;
+  }
 }
