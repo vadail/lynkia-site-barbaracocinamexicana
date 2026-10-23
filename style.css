@@ -119,29 +119,8 @@ a:focus-visible {
   padding: 28px 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 24px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-height: 44px;
-}
-
-.brand__logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  box-shadow: 0 6px 18px rgba(80, 22, 14, 0.18);
-}
-
-.brand__name {
-  font-family: "Courgette", cursive;
-  font-size: 30px;
-  color: #FFFFFF;
-  text-shadow: 0 1px 12px rgba(23, 20, 18, 0.35);
 }
 
 .nav {
@@ -198,17 +177,17 @@ a:focus-visible {
 /* Eyebrow a la izquierda y el sello a la derecha, justo encima del nombre */
 .hero__top {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 16px;
 }
 
 .hero__seal {
   flex: none;
-  width: 112px;
-  height: 112px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  box-shadow: 0 12px 32px rgba(80, 22, 14, 0.18);
+  box-shadow: 0 24px 60px rgba(80, 22, 14, 0.3);
 }
 
 .eyebrow {
@@ -515,8 +494,12 @@ a:focus-visible {
   }
 
   .hero__seal {
-    width: 76px;
-    height: 76px;
+    width: 128px;
+    height: 128px;
+  }
+
+  .header {
+    display: none;
   }
 
   .eyebrow {
