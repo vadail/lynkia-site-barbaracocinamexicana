@@ -195,6 +195,22 @@ a:focus-visible {
   gap: 18px;
 }
 
+/* Eyebrow a la izquierda y el sello a la derecha, justo encima del nombre */
+.hero__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.hero__seal {
+  flex: none;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  box-shadow: 0 12px 32px rgba(80, 22, 14, 0.18);
+}
+
 .eyebrow {
   display: flex;
   align-items: center;
@@ -479,7 +495,7 @@ a:focus-visible {
 
 @media (max-width: 860px) {
   .hero__veil {
-    background: linear-gradient(180deg, rgba(251, 244, 236, 0.55) 0%, rgba(251, 244, 236, 0) 14%, rgba(251, 244, 236, 0) 34%, rgba(251, 244, 236, 0.92) 56%, #FBF4EC 72%);
+    background: linear-gradient(180deg, rgba(251, 244, 236, 0.55) 0%, rgba(251, 244, 236, 0) 14%, rgba(251, 244, 236, 0) 30%, rgba(251, 244, 236, 0.92) 50%, #FBF4EC 66%);
   }
 
   .hero__img {
@@ -496,5 +512,26 @@ a:focus-visible {
 
   .nav {
     display: none;
+  }
+
+  .hero__seal {
+    width: 76px;
+    height: 76px;
+  }
+
+  .eyebrow {
+    gap: 10px;
+  }
+
+  .eyebrow::before {
+    width: 24px;
+  }
+
+  .eyebrow span {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    /* sobre la chaqueta oscura de la foto: halo claro para que se lea */
+    text-shadow: 0 0 10px rgba(251, 244, 236, 0.95), 0 0 4px rgba(251, 244, 236, 0.9);
   }
 }
