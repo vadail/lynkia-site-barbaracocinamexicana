@@ -189,7 +189,7 @@ a:focus-visible {
 
 .hero__copy {
   margin-left: auto;
-  max-width: 500px;
+  max-width: 580px;
   display: flex;
   flex-direction: column;
   gap: 18px;
