@@ -137,6 +137,91 @@ body::before {
   flex-shrink: 0;
 }
 
+.courses {
+  width: 100%;
+  margin-top: 8px;
+  padding: 26px 22px;
+  border-radius: 22px;
+  background: var(--card-bg);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(246, 193, 119, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 30px rgba(246, 193, 119, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.courses__title {
+  margin: 0;
+  font-family: "Great Vibes", "Inter", cursive;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.courses__subtitle {
+  margin: 6px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.courses [data-lynkia-catalog] {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.lynkia-content-item {
+  background: rgba(12, 12, 16, 0.42);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lynkia-content-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(246, 193, 119, 0.6);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 24px rgba(246, 193, 119, 0.15);
+}
+
+.lynkia-content-link {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.lynkia-content-cover {
+  border-radius: 0;
+}
+
+.lynkia-content-title {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.lynkia-content-price {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.lynkia-content-empty {
+  color: var(--ink-faint);
+  font-size: 14px;
+}
+
 .footer {
   margin-top: 24px;
 }
