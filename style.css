@@ -518,3 +518,5 @@ a:focus-visible {
     text-shadow: 0 0 10px rgba(251, 244, 236, 0.95), 0 0 4px rgba(251, 244, 236, 0.9);
   }
 }
+
+/* v3 (24-10-2026): nueva direccion de la hoja de estilos para quien cacheo la anterior */
